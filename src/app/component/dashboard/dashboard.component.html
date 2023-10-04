@@ -1,0 +1,71 @@
+
+
+<div class="container-fluid bg-info">
+    <div class="container bg-info">
+
+    <div class="row mt-4" style="height: 50px;">
+        <div class="col"></div>
+        <div class="col-md-6 bg-white shadow">  
+
+        <div class="card mt-4 bg-info" >
+            <h4 class="test-white ps-3 pt-2 pb-2">TO Do List</h4>
+        </div> 
+    
+
+     
+    <div class="shadow">
+    <div class="input-group p-4">
+         <input type="text" class="form-control" placeholder="Enter task" name="task" [(ngModel)]=" addTaskValue">
+        <button class="btn btn-outline-success" type="button" (click)="addTask()">+</button>
+      </div>
+   
+    
+</div>
+
+
+  
+       <h4 class="text-info mt-4">Tasks :</h4>
+       <div style="overflow-y: auto; height: 350px;">
+        <div class="m-3" *ngFor="let task of taskArr">
+            <div class="p-2 shadow border">
+                <div class="input-group row ps-3">
+                <div class="card col-md-10 border-0">{{task.task_name}}</div>
+                <button class="btn btn-outline-info col me-2" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" (click)="call(task)">e</button>
+                <div class="btn btn-outline-danger col del-btn" (click)=" deleteTask(task)">x</div>
+ 
+            </div>
+
+
+        </div>
+
+       </div>
+    </div>
+   
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Task</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="input-group p-4">
+                <input type="text" class="form-control" placeholder="Enter task" name="task" [(ngModel)]=" editTaskValue">
+                <button class="btn btn-outline-success"  data-bs-dismiss="modal" type="button" (click)="editTask()">Update</button>
+              </div>
+         
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+        <div class="col">
+            
+        </div>
+     
+    </div>
+ 
+</div>
+    </div>
+
